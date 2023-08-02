@@ -23,15 +23,15 @@ function removeAllProperty(state) {
 }
 
 function transformState(state, actions) {
-  for (const item of actions) {
-    switch (item.type) {
+  for (const action of actions) {
+    switch (action.type) {
       case 'addProperties': {
-        addProperties(state, item.extraData);
+        addProperties(state, action.extraData);
         break;
       }
 
       case 'removeProperties': {
-        removeProperties(state, item.keysToRemove);
+        removeProperties(state, action.keysToRemove);
         break;
       }
 
